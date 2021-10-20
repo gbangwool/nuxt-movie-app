@@ -115,6 +115,7 @@ export default {
     }
   },
   head() {
+    console.log(process.env);
     return {
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'website' },
