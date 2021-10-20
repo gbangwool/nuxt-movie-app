@@ -83,12 +83,12 @@ export default {
   components: {
     Loader
   },
-  //asyncdata: nuxt에서 SSR 렌더링 전에 해야하는 동작, 데이터들을 정의하는 기능
-  //화면에 출력되기 전에 준비해야하는 내용들 여기에~
-  async asyncData({ store, params}) { 
+  async asyncData({ store, params }) {
     await store.dispatch('movie/searchMovieWithId', {
       id: params.id
     })
+    // asyncData 옵션에서 반환되는 값은,
+    // 자동으로 data 옵션으로 등록되며 반응성을 가집니다.
     return {
       imageLoading: true
     }
@@ -99,7 +99,6 @@ export default {
       'theMovie'
     ])
   },
-
   methods: {
     requestDiffSizeImage(url, size = 700) {
       // 잘못된 URL(Poster)인 경우.
