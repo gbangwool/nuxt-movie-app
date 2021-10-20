@@ -1,5 +1,4 @@
 export default {
-  ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Nuxt Movie App',
@@ -48,6 +47,7 @@ export default {
     '@nuxtjs/dotenv'
   ],
 
+  // @nuxtjs/style-resources
   styleResources: {
     scss: [
       '~/scss/main.scss'
@@ -68,9 +68,10 @@ export default {
       ]
     }
   },
+
   serverMiddleware: [
-    { 
-      path: '/api/movie', 
+    {
+      path: '/api/movie',
       handler: '~/server-middleware/movie.js'
     }
   ]
